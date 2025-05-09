@@ -1,37 +1,47 @@
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 public class GUI extends JFrame {
 
-    private JComboBox<String> comboBox; // Declarando el cuadro combinado en tipo cadena
-    
-   public GUI() {
+    public GUI() {
 
-    // Configuracion de la ventana   
-   
-    setTitle("LI");
-    setSize(700,700);
-    setDefaultCloseOperation(EXIT_ON_CLOSE);
-    setLayout(null); // aca hay que usar otro diseño de ventana para agregar botones ect...
+        // aca se configura la ventana
+        setTitle("Sistema de Denuncias Ciudadanas");
+        setSize(400, 300);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null); // Centrar ventana
+        setResizable(false);
 
-  
-    // Se inicia el cuadro combinado con elementos que serian las opciones
-  
-    String[] opciones = {"ROBO", "VIOLENCIA", "DROGAS", "HOMICIDIOS", "MALTRATO INFANTIL", "MALTRATO ANIMAL", "ACTITUDES IRREGULARES EN FUNCIONARIOS PUBLICOS"};
-    comboBox = new JComboBox<>(opciones);
+        // se crea un panel que usa diseño cuadricola
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(5, 1, 10, 10)); // 5 filas, 1 columna, espacios de 10px
 
-    comboBox.setBounds(70, 70, 700, 50); // Solo se usa si no hay diseño 
+        // se crea una etiqueta de bienvenida
+        JLabel titulo = new JLabel("Menú Principal", JLabel.CENTER);
+        titulo.setFont(new Font("Arial", Font.BOLD, 20));
+        panel.add(titulo);
 
-     // se añade el cuadro combinado a la ventana osea al JFrame
-     add(comboBox);
+        // estos son los botones del menu 
+        JButton btnHacer = new JButton("Hacer denuncia");
+        JButton btnBuscar = new JButton("Buscar denuncia");
+        JButton btnMostrar = new JButton("Mostrar denuncias");
+        JButton btnRetirar = new JButton("Retirar denuncia");
 
-     // Mostrar lo anterior en la ventana
-     setVisible(true);
+        // aca se agregan botones al panel
 
-   }
+        panel.add(btnHacer);
+        panel.add(btnBuscar);
+        panel.add(btnMostrar);
+        panel.add(btnRetirar);
 
-   public static void main(String[] args) {
-    new GUI();
-}
+        // Agregar panel a la ventana
+        add(panel);
 
+        // Hacer que se vea la ventana
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new GUI();
+    }
 }

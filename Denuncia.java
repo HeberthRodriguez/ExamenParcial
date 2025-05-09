@@ -1,11 +1,13 @@
 
-public class Denuncia {
+public abstract class Denuncia {
 
+    // atributos protegidos ya que no pueden ser privados por que ocupamos que se hereden a las subclases
     protected String tipo;
     protected String descripcion;
     protected String lugar;
     protected String fecha;
    
+    // constructor
     public Denuncia(String tipo, String descripcion, String lugar, String fecha) {
         this.tipo = tipo;
         this.descripcion = descripcion;
@@ -13,13 +15,14 @@ public class Denuncia {
         this.fecha = fecha;
     }
 
-    public String toString() {
-       
-        return "Tipo: " + tipo + "\nDescripción: " + descripcion + "\nLugar: " + lugar + "\nFecha: " + fecha + "\n";
+    // aca definimos un metodo abstracto
+    public abstract String toString();
 
-    }
-    
-    
+    // para ver que tipo de denuncia es
+    public abstract void procesarDenuncia();
+
+
+    // gets y sets
     public String getTipo() {
         return tipo;
     }
