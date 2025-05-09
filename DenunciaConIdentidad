@@ -1,0 +1,24 @@
+public class DenunciaConIdentidad extends Denuncia {
+    private Cliente denunciante;
+
+    public DenunciaConIdentidad(String tipo, String descripcion, String lugar, String fecha, Cliente denunciante) {
+        super(tipo, descripcion, lugar, fecha);
+        this.denunciante = denunciante;
+    }
+
+    @Override
+    public String toString() {
+        return "Tipo: " + tipo + "\nDescripción: " + descripcion + "\nLugar: " + lugar +
+               "\nFecha: " + fecha + "\n[Identificada]\n" + denunciante.toString();
+    }
+
+    public Cliente getDenunciante() {
+    return denunciante;
+    }
+
+    public void setDenunciante(Cliente denunciante) {
+    this.denunciante = denunciante;
+    }
+   
+
+}

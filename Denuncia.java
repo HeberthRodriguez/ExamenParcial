@@ -1,10 +1,10 @@
 
 public class Denuncia {
 
-    private String tipo;
-    private String descripcion;
-    private String lugar;
-    private String fecha;
+    protected String tipo;
+    protected String descripcion;
+    protected String lugar;
+    protected String fecha;
    
     public Denuncia(String tipo, String descripcion, String lugar, String fecha) {
         this.tipo = tipo;
