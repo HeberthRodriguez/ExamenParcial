@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 public class DenunciaConIdentidad extends Denuncia {
     private Cliente cliente;  // aca hacemos una relacion de composicion ya que la clase DenunciaConIdentidad usa como atributo a Cliente 
 
-    // Constructor
+    // Constructor ...
     public DenunciaConIdentidad(String tipo, String descripcion, String lugar, String fecha, Cliente cliente) {
         super(tipo, descripcion, lugar, fecha);  // Llamamos al constructor de la clase padre
         this.cliente = cliente;
