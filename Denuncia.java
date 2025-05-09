@@ -1,7 +1,7 @@
 
 public abstract class Denuncia {
 
-    // atributos protegidos ya que no pueden ser privados por que ocupamos que se hereden a las subclases
+    // atributos protegidos ya que no pueden ser privados por que ocupamos que se hereden a las subclases ....
     protected String tipo;
     protected String descripcion;
     protected String lugar;
